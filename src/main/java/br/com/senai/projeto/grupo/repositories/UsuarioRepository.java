@@ -1,6 +1,7 @@
 package br.com.senai.projeto.grupo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import br.com.senai.projeto.grupo.models.Usuario;
@@ -8,5 +9,6 @@ import br.com.senai.projeto.grupo.models.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-    
+    @Query(value="select * from usuario where email = :emal", nativeQuery=true)
+    public Usuario findByEmail(String email); 
 }
