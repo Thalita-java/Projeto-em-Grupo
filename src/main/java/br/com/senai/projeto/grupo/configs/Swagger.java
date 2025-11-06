@@ -8,9 +8,9 @@ import io.swagger.v3.oas.annotations.info.Info;
 @Configuration
 @OpenAPIDefinition(
     info = @Info(
-        title = "Tiana",
+        title = "Projeto em Grupo",
         version = "1.0",
-        description = "email para contato: tiana@gmail.com"
+        description = "Davi Marques, Lara Cruz, Rafella Melo e Thalita Lisboa"
     )
 )
 public class Swagger {
