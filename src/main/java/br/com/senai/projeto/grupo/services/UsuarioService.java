@@ -3,6 +3,7 @@ package br.com.senai.projeto.grupo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.projeto.grupo.models.Endereco;
 import br.com.senai.projeto.grupo.models.Usuario;
 import br.com.senai.projeto.grupo.repositories.UsuarioRepository;
 
@@ -40,4 +41,18 @@ public class UsuarioService {
         return "Falha ao realizar login";
     }
     
+
+    public Usuario buscar(Integer id){
+        return usuarioRepository.findById(id).get();
+    }
+
+     public Usuario atualizarUsuario (Usuario usuario, Integer id){
+        Usuario c = buscar(id);
+        if(c != null){
+           usuario.setId(id);
+           return usuarioRepository.save(usuario);
+    }
+    return null;
+
+    }
 }

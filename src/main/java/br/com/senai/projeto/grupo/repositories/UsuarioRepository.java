@@ -9,6 +9,6 @@ import br.com.senai.projeto.grupo.models.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-    @Query(value="select * from usuario where email = :emal", nativeQuery=true)
+    @Query(value="select * from usuario where email = :email", nativeQuery=true)
     public Usuario findByEmail(String email); 
 }
